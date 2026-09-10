@@ -14,7 +14,7 @@ final class ShareViewController: UIViewController {
     let url = await extractSharedURL()
     let root = ShareConvertView(
       initialURL: url,
-      open: { [weak self] url in self?.extensionContext?.open(url) },
+      openPin: { [weak self] pin in self?.openPin(pin) },
       onDone: { [weak self] in self?.extensionContext?.completeRequest(returningItems: nil) }
     )
     let host = UIHostingController(rootView: root)
@@ -31,12 +31,12 @@ final class ShareViewController: UIViewController {
       for provider in item.attachments ?? [] {
         if provider.hasItemConformingToTypeIdentifier(UTType.url.identifier),
            let value = try? await provider.loadItem(forTypeIdentifier: UTType.url.identifier),
-           let url = value as? URL {
+           let url = asURL(value) {
           return url.absoluteString
         }
         if provider.hasItemConformingToTypeIdentifier(UTType.plainText.identifier),
            let value = try? await provider.loadItem(forTypeIdentifier: UTType.plainText.identifier),
-           let text = value as? String {
+           let text = asString(value) {
           if let found = firstURL(in: text) { return found }
           return text.trimmingCharacters(in: .whitespacesAndNewlines)
         }
@@ -50,11 +50,32 @@ final class ShareViewController: UIViewController {
     let range = NSRange(text.startIndex..., in: text)
     return detector?.firstMatch(in: text, options: [], range: range)?.url?.absoluteString
   }
+
+  private func asURL(_ value: Any) -> URL? {
+    (value as? URL) ?? (value as? NSURL) as URL?
+  }
+
+  private func asString(_ value: Any) -> String? {
+    (value as? String) ?? (value as? NSString) as String?
+  }
+
+  private func openPin(_ pin: LastPin) {
+    openCandidates(MapsOpener.candidateURLs(for: pin))
+  }
+
+  private func openCandidates(_ urls: [URL]) {
+    guard let url = urls.first else { return }
+    extensionContext?.open(url) { [weak self] success in
+      if !success {
+        self?.openCandidates(Array(urls.dropFirst()))
+      }
+    }
+  }
 }
 
 struct ShareConvertView: View {
   let initialURL: String
-  let open: (URL) -> Void
+  let openPin: (LastPin) -> Void
   let onDone: () -> Void
 
   @State private var pin: LastPin?
@@ -71,9 +92,7 @@ struct ShareConvertView: View {
             .font(.footnote)
             .foregroundStyle(.secondary)
           Button("Open in \(pin.targetPlatform ?? "Maps")") {
-            if let url = MapsOpener.webURL(for: pin) {
-              open(url)
-            }
+            openPin(pin)
           }
           .buttonStyle(.borderedProminent)
         } else if let errorMessage {

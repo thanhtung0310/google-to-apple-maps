@@ -1,7 +1,8 @@
 const express = require('express');
 const axios = require('axios');
 const path = require('path');
-const { extractCoords, extractPlaceName, buildMapUrls } = require('./extract');
+const { extractCoords, extractPlaceName, buildMapUrls, isAppleMapsSource } = require('./extract');
+const { parseHttpUrl, assertSafeMapUrl } = require('./urlGuard');
 
 const app = express();
 
@@ -14,8 +15,9 @@ app.get('/api/health', (_req, res) => {
 });
 
 async function expandMapLink(cleanUrl) {
-  const redirectChain = [cleanUrl];
-  const response = await axios.get(cleanUrl, {
+  const start = await assertSafeMapUrl(cleanUrl);
+  const redirectChain = [start.href];
+  const response = await axios.get(start.href, {
     maxRedirects: 15,
     timeout: 10000,
     headers: {
@@ -23,13 +25,18 @@ async function expandMapLink(cleanUrl) {
       'Accept-Language': 'en-US,en;q=0.9',
       'Cookie': 'CONSENT=PENDING+999; SOCS=CAISHAgBEhJnd3NfMjAyMzA4MTAtMF9SQzEgGgJ2aSAAYACaAcU'
     },
-    beforeRedirect: (_options, { headers }) => {
-      if (headers.location) redirectChain.push(headers.location);
+    beforeRedirect: (options, { headers }) => {
+      if (!headers.location) return;
+      const next = parseHttpUrl(headers.location, options.href || redirectChain[redirectChain.length - 1]);
+      redirectChain.push(next.href);
     }
   });
 
   const finalUrl = response.request?.res?.responseUrl || response.config?.url || '';
-  redirectChain.push(finalUrl);
+  if (finalUrl) {
+    parseHttpUrl(finalUrl);
+    redirectChain.push(finalUrl);
+  }
   const html = typeof response.data === 'string' ? response.data : '';
   return {
     redirectChain,
@@ -45,7 +52,6 @@ app.post('/api/resolve', async (req, res) => {
   let searchBlob = cleanUrl;
   let nameSource = cleanUrl;
   let coords = extractCoords(cleanUrl);
-  const isAppleSource = /maps\.apple\.com/i.test(cleanUrl);
   const needsExpand = !coords || coords.source === 'viewport';
 
   if (needsExpand && /^https?:\/\//i.test(cleanUrl)) {
@@ -58,7 +64,10 @@ app.post('/api/resolve', async (req, res) => {
     } catch (err) {
       if (!coords) {
         console.error('Resolution Error:', err.message);
-        return res.status(500).json({ error: 'Failed to resolve map link.', details: err.message });
+        const status = /Only Google Maps|Invalid URL|private addresses|known maps host|http\(s\)/.test(err.message)
+          ? 400
+          : 500;
+        return res.status(status).json({ error: err.message || 'Failed to resolve map link.', details: err.message });
       }
     }
   }
@@ -66,6 +75,7 @@ app.post('/api/resolve', async (req, res) => {
   if (coords) {
     const name = extractPlaceName(nameSource) || extractPlaceName(cleanUrl);
     const { appleUrl, googleUrl } = buildMapUrls(coords.lat, coords.lng, name);
+    const isAppleSource = isAppleMapsSource(nameSource) || isAppleMapsSource(cleanUrl);
 
     return res.json({
       success: true,
@@ -83,7 +93,7 @@ app.post('/api/resolve', async (req, res) => {
   return res.status(422).json({ error: 'Could not extract coordinates from the provided link.' });
 });
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 

@@ -26,7 +26,6 @@ go.work.sum
 
 # Node
 node_modules/
-package-lock.json
 
 # macOS
 .DS_Store
