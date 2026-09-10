@@ -9,7 +9,7 @@
 *.dylib
 
 # Test binary, built with `go test -c`
-*.test
+# (do not use a blanket *.test — that is for Go binaries, not Node tests)
 
 # Code coverage profiles and other test artifacts
 *.out
@@ -26,6 +26,7 @@ go.work.sum
 
 # Node
 node_modules/
+package-lock.json
 
 # macOS
 .DS_Store
@@ -37,3 +38,6 @@ node_modules/
 # Editor/IDE
 # .idea/
 # .vscode/
+
+xcuserdata/
+DerivedData/
