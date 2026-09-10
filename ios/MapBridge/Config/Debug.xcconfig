@@ -1,0 +1,3 @@
+// Debug: Simulator can reach the Node server on the Mac.
+// Physical devices cannot use localhost — use a tunnel and override this if needed.
+MAPBRIDGE_API_BASE_URL = http:/$()/127.0.0.1:3000

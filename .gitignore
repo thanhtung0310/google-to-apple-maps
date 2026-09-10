@@ -9,7 +9,7 @@
 *.dylib
 
 # Test binary, built with `go test -c`
-*.test
+# (do not use a blanket *.test — that is for Go binaries, not Node tests)
 
 # Code coverage profiles and other test artifacts
 *.out
@@ -37,3 +37,6 @@ node_modules/
 # Editor/IDE
 # .idea/
 # .vscode/
+
+xcuserdata/
+DerivedData/

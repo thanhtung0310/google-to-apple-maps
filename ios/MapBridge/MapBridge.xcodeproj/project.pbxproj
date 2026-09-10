@@ -1,0 +1,702 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00000000000000000000064 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000001 /* AppConstants.swift */; };
+		A00000000000000000000065 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000001 /* AppConstants.swift */; };
+		A00000000000000000000066 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000001 /* AppConstants.swift */; };
+		A00000000000000000000067 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000002 /* APIConfig.swift */; };
+		A00000000000000000000068 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000002 /* APIConfig.swift */; };
+		A00000000000000000000069 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000002 /* APIConfig.swift */; };
+		A0000000000000000000006A /* ResolveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000003 /* ResolveResponse.swift */; };
+		A0000000000000000000006B /* ResolveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000003 /* ResolveResponse.swift */; };
+		A0000000000000000000006C /* ResolveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000003 /* ResolveResponse.swift */; };
+		A0000000000000000000006D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000004 /* APIError.swift */; };
+		A0000000000000000000006E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000004 /* APIError.swift */; };
+		A0000000000000000000006F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000004 /* APIError.swift */; };
+		A00000000000000000000070 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005 /* APIClient.swift */; };
+		A00000000000000000000071 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005 /* APIClient.swift */; };
+		A00000000000000000000072 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005 /* APIClient.swift */; };
+		A00000000000000000000073 /* LastPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000006 /* LastPin.swift */; };
+		A00000000000000000000074 /* LastPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000006 /* LastPin.swift */; };
+		A00000000000000000000075 /* LastPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000006 /* LastPin.swift */; };
+		A00000000000000000000076 /* LastPinStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000007 /* LastPinStore.swift */; };
+		A00000000000000000000077 /* LastPinStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000007 /* LastPinStore.swift */; };
+		A00000000000000000000078 /* LastPinStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000007 /* LastPinStore.swift */; };
+		A00000000000000000000079 /* MapsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000008 /* MapsOpener.swift */; };
+		A0000000000000000000007A /* MapsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000008 /* MapsOpener.swift */; };
+		A0000000000000000000007B /* MapsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000008 /* MapsOpener.swift */; };
+		A0000000000000000000007C /* MapBridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000009 /* MapBridgeApp.swift */; };
+		A0000000000000000000007F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000A /* ContentView.swift */; };
+		A00000000000000000000082 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000B /* WatchSessionManager.swift */; };
+		A0000000000000000000008B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000E /* Assets.xcassets */; };
+		A00000000000000000000090 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000F /* ShareViewController.swift */; };
+		A00000000000000000000098 /* MapBridgeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000012 /* MapBridgeWatchApp.swift */; };
+		A0000000000000000000009B /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000013 /* WatchContentView.swift */; };
+		A0000000000000000000009E /* WatchPinReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000014 /* WatchPinReceiver.swift */; };
+		A000000000000000000000A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000017 /* Assets.xcassets */; };
+		A00000000000000000000104 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00000000000000000000107 /* WatchConnectivity.framework */; };
+		A00000000000000000000105 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00000000000000000000108 /* WatchConnectivity.framework */; };
+		A00000000000000000000106 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00000000000000000000109 /* MapKit.framework */; };
+		A00000000000000000000118 /* MapBridgeWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A000000000000000000000FB /* MapBridgeWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A00000000000000000000119 /* MapBridgeShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A000000000000000000000FC /* MapBridgeShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A000000000000000000000F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A000000000000000000000CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A000000000000000000000C9;
+			remoteInfo = MapBridgeWatch;
+		};
+		A000000000000000000000F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A000000000000000000000CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A000000000000000000000CA;
+			remoteInfo = MapBridgeShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A000000000000000000000F0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A00000000000000000000118 /* MapBridgeWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000000000000000000000F1 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A00000000000000000000119 /* MapBridgeShare.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A00000000000000000000001 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		A00000000000000000000002 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		A00000000000000000000003 /* ResolveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolveResponse.swift; sourceTree = "<group>"; };
+		A00000000000000000000004 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		A00000000000000000000005 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		A00000000000000000000006 /* LastPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPin.swift; sourceTree = "<group>"; };
+		A00000000000000000000007 /* LastPinStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPinStore.swift; sourceTree = "<group>"; };
+		A00000000000000000000008 /* MapsOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsOpener.swift; sourceTree = "<group>"; };
+		A00000000000000000000009 /* MapBridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBridgeApp.swift; sourceTree = "<group>"; };
+		A0000000000000000000000A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A0000000000000000000000B /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		A0000000000000000000000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0000000000000000000000D /* MapBridge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MapBridge.entitlements; sourceTree = "<group>"; };
+		A0000000000000000000000E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0000000000000000000000F /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		A00000000000000000000010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00000000000000000000011 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
+		A00000000000000000000012 /* MapBridgeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBridgeWatchApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000013 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
+		A00000000000000000000014 /* WatchPinReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPinReceiver.swift; sourceTree = "<group>"; };
+		A00000000000000000000015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00000000000000000000016 /* MapBridgeWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MapBridgeWatch.entitlements; sourceTree = "<group>"; };
+		A00000000000000000000017 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A00000000000000000000018 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		A00000000000000000000019 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		A000000000000000000000FA /* MapBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A000000000000000000000FB /* MapBridgeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBridgeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A000000000000000000000FC /* MapBridgeShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MapBridgeShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000107 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		A00000000000000000000108 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		A00000000000000000000109 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A000000000000000000000EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000104 /* WatchConnectivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000000000000000000000ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000105 /* WatchConnectivity.framework in Frameworks */,
+				A00000000000000000000106 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000000000000000000000EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08B51C9C304FAFD400211516 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000108 /* WatchConnectivity.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		A0000000000000000000010E = {
+			isa = PBXGroup;
+			children = (
+				A0000000000000000000010F /* Shared */,
+				A00000000000000000000110 /* MapBridge */,
+				A00000000000000000000111 /* MapBridgeWatch */,
+				A00000000000000000000112 /* ShareExtension */,
+				A00000000000000000000113 /* Config */,
+				A00000000000000000000115 /* Frameworks */,
+				A00000000000000000000114 /* Products */,
+				08B51C9C304FAFD400211516 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		A0000000000000000000010F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000001 /* AppConstants.swift */,
+				A00000000000000000000002 /* APIConfig.swift */,
+				A00000000000000000000003 /* ResolveResponse.swift */,
+				A00000000000000000000004 /* APIError.swift */,
+				A00000000000000000000005 /* APIClient.swift */,
+				A00000000000000000000006 /* LastPin.swift */,
+				A00000000000000000000007 /* LastPinStore.swift */,
+				A00000000000000000000008 /* MapsOpener.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000110 /* MapBridge */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000009 /* MapBridgeApp.swift */,
+				A0000000000000000000000A /* ContentView.swift */,
+				A0000000000000000000000B /* WatchSessionManager.swift */,
+				A0000000000000000000000C /* Info.plist */,
+				A0000000000000000000000D /* MapBridge.entitlements */,
+				A0000000000000000000000E /* Assets.xcassets */,
+			);
+			path = MapBridge;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000111 /* MapBridgeWatch */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000012 /* MapBridgeWatchApp.swift */,
+				A00000000000000000000013 /* WatchContentView.swift */,
+				A00000000000000000000014 /* WatchPinReceiver.swift */,
+				A00000000000000000000015 /* Info.plist */,
+				A00000000000000000000016 /* MapBridgeWatch.entitlements */,
+				A00000000000000000000017 /* Assets.xcassets */,
+			);
+			path = MapBridgeWatch;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000112 /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A0000000000000000000000F /* ShareViewController.swift */,
+				A00000000000000000000010 /* Info.plist */,
+				A00000000000000000000011 /* ShareExtension.entitlements */,
+			);
+			path = ShareExtension;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000113 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000018 /* Debug.xcconfig */,
+				A00000000000000000000019 /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000114 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A000000000000000000000FA /* MapBridge.app */,
+				A000000000000000000000FB /* MapBridgeWatch.app */,
+				A000000000000000000000FC /* MapBridgeShare.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000115 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000107 /* WatchConnectivity.framework */,
+				A00000000000000000000109 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A000000000000000000000C8 /* MapBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A000000000000000000000D2 /* Build configuration list for PBXNativeTarget "MapBridge" */;
+			buildPhases = (
+				A000000000000000000000E6 /* Sources */,
+				A000000000000000000000EC /* Frameworks */,
+				A000000000000000000000E9 /* Resources */,
+				A000000000000000000000F0 /* Embed Watch Content */,
+				A000000000000000000000F1 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A000000000000000000000F4 /* PBXTargetDependency */,
+				A000000000000000000000F5 /* PBXTargetDependency */,
+			);
+			name = MapBridge;
+			productName = MapBridge;
+			productReference = A000000000000000000000FA /* MapBridge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A000000000000000000000C9 /* MapBridgeWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A000000000000000000000D3 /* Build configuration list for PBXNativeTarget "MapBridgeWatch" */;
+			buildPhases = (
+				A000000000000000000000E7 /* Sources */,
+				A000000000000000000000ED /* Frameworks */,
+				A000000000000000000000EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapBridgeWatch;
+			productName = MapBridgeWatch;
+			productReference = A000000000000000000000FB /* MapBridgeWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A000000000000000000000CA /* MapBridgeShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A000000000000000000000D4 /* Build configuration list for PBXNativeTarget "MapBridgeShare" */;
+			buildPhases = (
+				A000000000000000000000E8 /* Sources */,
+				A000000000000000000000EE /* Frameworks */,
+				A000000000000000000000EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapBridgeShare;
+			productName = MapBridgeShare;
+			productReference = A000000000000000000000FC /* MapBridgeShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A000000000000000000000CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					A000000000000000000000C8 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					A000000000000000000000C9 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					A000000000000000000000CA = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = A000000000000000000000D5 /* Build configuration list for PBXProject "MapBridge" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0000000000000000000010E;
+			productRefGroup = A00000000000000000000114 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A000000000000000000000C8 /* MapBridge */,
+				A000000000000000000000C9 /* MapBridgeWatch */,
+				A000000000000000000000CA /* MapBridgeShare */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A000000000000000000000E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000000000000000000008B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000000000000000000000EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A000000000000000000000A7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000000000000000000000EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A000000000000000000000E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000064 /* AppConstants.swift in Sources */,
+				A00000000000000000000067 /* APIConfig.swift in Sources */,
+				A0000000000000000000006A /* ResolveResponse.swift in Sources */,
+				A0000000000000000000006D /* APIError.swift in Sources */,
+				A00000000000000000000070 /* APIClient.swift in Sources */,
+				A00000000000000000000073 /* LastPin.swift in Sources */,
+				A00000000000000000000076 /* LastPinStore.swift in Sources */,
+				A00000000000000000000079 /* MapsOpener.swift in Sources */,
+				A0000000000000000000007C /* MapBridgeApp.swift in Sources */,
+				A0000000000000000000007F /* ContentView.swift in Sources */,
+				A00000000000000000000082 /* WatchSessionManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000000000000000000000E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000065 /* AppConstants.swift in Sources */,
+				A00000000000000000000068 /* APIConfig.swift in Sources */,
+				A0000000000000000000006B /* ResolveResponse.swift in Sources */,
+				A0000000000000000000006E /* APIError.swift in Sources */,
+				A00000000000000000000071 /* APIClient.swift in Sources */,
+				A00000000000000000000074 /* LastPin.swift in Sources */,
+				A00000000000000000000077 /* LastPinStore.swift in Sources */,
+				A0000000000000000000007A /* MapsOpener.swift in Sources */,
+				A00000000000000000000098 /* MapBridgeWatchApp.swift in Sources */,
+				A0000000000000000000009B /* WatchContentView.swift in Sources */,
+				A0000000000000000000009E /* WatchPinReceiver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000000000000000000000E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000066 /* AppConstants.swift in Sources */,
+				A00000000000000000000069 /* APIConfig.swift in Sources */,
+				A0000000000000000000006C /* ResolveResponse.swift in Sources */,
+				A0000000000000000000006F /* APIError.swift in Sources */,
+				A00000000000000000000072 /* APIClient.swift in Sources */,
+				A00000000000000000000075 /* LastPin.swift in Sources */,
+				A00000000000000000000078 /* LastPinStore.swift in Sources */,
+				A0000000000000000000007B /* MapsOpener.swift in Sources */,
+				A00000000000000000000090 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A000000000000000000000F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A000000000000000000000C9 /* MapBridgeWatch */;
+			targetProxy = A000000000000000000000F2 /* PBXContainerItemProxy */;
+		};
+		A000000000000000000000F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A000000000000000000000CA /* MapBridgeShare */;
+			targetProxy = A000000000000000000000F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A000000000000000000000DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MapBridge/MapBridge.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 44273J4SQ9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapBridge/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Map Bridge";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapbridge.app;
+				PRODUCT_NAME = MapBridge;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A000000000000000000000DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MapBridge/MapBridge.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 44273J4SQ9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapBridge/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Map Bridge";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapbridge.app;
+				PRODUCT_NAME = MapBridge;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A000000000000000000000DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MapBridgeWatch/MapBridgeWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 44273J4SQ9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapBridgeWatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Map Bridge";
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.mapbridge.app;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapbridge.app.watchkitapp;
+				PRODUCT_NAME = MapBridgeWatch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		A000000000000000000000DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MapBridgeWatch/MapBridgeWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 44273J4SQ9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapBridgeWatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Map Bridge";
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.mapbridge.app;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapbridge.app.watchkitapp;
+				PRODUCT_NAME = MapBridgeWatch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		A000000000000000000000E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 44273J4SQ9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapbridge.app.share;
+				PRODUCT_MODULE_NAME = MapBridgeShare;
+				PRODUCT_NAME = MapBridgeShare;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A000000000000000000000E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 44273J4SQ9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapbridge.app.share;
+				PRODUCT_MODULE_NAME = MapBridgeShare;
+				PRODUCT_NAME = MapBridgeShare;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A000000000000000000000E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A00000000000000000000018 /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A000000000000000000000E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A00000000000000000000019 /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A000000000000000000000D2 /* Build configuration list for PBXNativeTarget "MapBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000000000000000000000DC /* Debug */,
+				A000000000000000000000DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A000000000000000000000D3 /* Build configuration list for PBXNativeTarget "MapBridgeWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000000000000000000000DE /* Debug */,
+				A000000000000000000000DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A000000000000000000000D4 /* Build configuration list for PBXNativeTarget "MapBridgeShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000000000000000000000E0 /* Debug */,
+				A000000000000000000000E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A000000000000000000000D5 /* Build configuration list for PBXProject "MapBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000000000000000000000E2 /* Debug */,
+				A000000000000000000000E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A000000000000000000000CB /* Project object */;
+}
