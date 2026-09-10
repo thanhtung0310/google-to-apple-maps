@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Bridge • Google to Apple Maps</title>
+  <style>
+    :root {
+      /* Google Brand Palette */
+      --google-blue: #4285F4;
+      --google-red: #EA4335;
+      --google-yellow: #FBBC05;
+      --google-green: #34A853;
+      
+      /* Apple UI Palette */
+      --apple-bg: #F2F2F7;
+      --apple-card: rgba(255, 255, 255, 0.85);
+      --apple-green: #30D158;
+      --apple-green-hover: #28B84C;
+      --text-main: #1C1C1E;
+      --text-sub: #636366;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--apple-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 32px 28px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    /* Colorful Header Badge */
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .g-text { color: var(--google-blue); }
+    .a-text { color: #000000; }
+
+    h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #4285F4, #EA4335, #34A853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.desc {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      margin: 0 0 24px 0;
+      line-height: 1.4;
+    }
+
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px 16px;
+      border: 2px solid #E5E5EA;
+      background: #FFFFFF;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      outline: none;
+      color: var(--text-main);
+    }
+
+    input:focus {
+      border-color: var(--google-blue);
+      box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.15);
+    }
+
+    /* Google Colored Action Button */
+    button.convert-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--google-blue), #2B6CB0);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(66, 133, 244, 0.35);
+    }
+
+    button.convert-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(66, 133, 244, 0.45);
+    }
+
+    button.convert-btn:disabled {
+      background: #C7C7CC;
+      box-shadow: none;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Apple Style Result Card */
+    .result-box {
+      margin-top: 24px;
+      padding: 20px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid #E5E5EA;
+      display: none;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .coords-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+      background: #F2F2F7;
+      padding: 8px 12px;
+      border-radius: 8px;
+      word-break: break-all;
+    }
+
+    .coords-tag span {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Apple Maps Direct Redirect Button */
+    .apple-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px;
+      background-color: var(--apple-green);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(48, 209, 88, 0.3);
+    }
+
+    .apple-btn:hover {
+      background-color: var(--apple-green-hover);
+      transform: translateY(-1px);
+    }
+
+    .error {
+      color: var(--google-red);
+      font-size: 0.85rem;
+      margin-top: 12px;
+      font-weight: 600;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="brand-badge">
+    <span class="g-text">Google Maps</span> ➔ <span class="a-text">Apple Maps</span>
+  </div>
+
+  <h2>Map Bridge</h2>
+  <p class="desc">Paste any Google Maps link or place pin to get exact coordinates for Apple Maps.</p>
+
+  <div class="input-wrapper">
+    <input type="text" id="urlInput" placeholder="Paste Google Maps URL or lat, lng..." />
+  </div>
+
+  <button id="convertBtn" class="convert-btn" onclick="convertLink()">Convert to Apple Maps</button>
+
+  <div class="error" id="errorMsg"></div>
+
+  <div class="result-box" id="resultBox">
+    <div class="coords-tag">
+      📍 <span>Pin Found:</span> <div id="coordsDisplay"></div>
+    </div>
+    <a href="#" id="appleLink" target="_blank" class="apple-btn">
+      Open in Apple Maps
+    </a>
+  </div>
+</div>
+
+<script>
+  async function convertLink() {
+    const input = document.getElementById('urlInput').value.trim();
+    const btn = document.getElementById('convertBtn');
+    const errorMsg = document.getElementById('errorMsg');
+    const resultBox = document.getElementById('resultBox');
+
+    errorMsg.style.display = 'none';
+    resultBox.style.display = 'none';
+
+    if (!input) {
+      showError("Please enter a Google Maps URL or raw coordinates.");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerText = "Resolving Location...";
+
+    try {
+      const response = await fetch('/api/resolve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: input })
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.lat && data.lng) {
+        showResult(data.lat, data.lng);
+      } else {
+        showError(data.error || "Could not resolve link.");
+      }
+    } catch (err) {
+      showError("Server error. Please ensure your backend is running.");
+    } finally {
+      btn.disabled = false;
+      btn.innerText = "Convert to Apple Maps";
+    }
+  }
+
+  function showResult(lat, lng) {
+    const coordsDisplay = document.getElementById('coordsDisplay');
+    const appleLink = document.getElementById('appleLink');
+    const resultBox = document.getElementById('resultBox');
+
+    // Strict 1:1 coordinate match format
+    const url = `https://maps.apple.com/?ll=${lat},${lng}&q=${lat},${lng}`;
+
+    coordsDisplay.innerText = `${lat}, ${lng}`;
+    appleLink.href = url;
+    resultBox.style.display = 'block';
+  }
+
+  function showError(msg) {
+    const errorMsg = document.getElementById('errorMsg');
+    errorMsg.innerText = msg;
+    errorMsg.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
